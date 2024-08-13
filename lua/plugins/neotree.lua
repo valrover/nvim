@@ -6,6 +6,6 @@ return {
         "nvim-tree/nvim-web-devicons",
         "MunifTanjim/nui.nvim",
     },
-    vim.keymap.set("n", "<leader>n", ":Neotree filesystem reveal left<CR>"),
-    vim.keymap.set("n", "<leader>x", ":Neotree close<CR>"),
+    vim.keymap.set("n", "<S-s>", ":Neotree filesystem reveal left<CR>"),
+    --vim.keymap.set("n", "<S-q>", ":Neotree close<CR>"),
 }
