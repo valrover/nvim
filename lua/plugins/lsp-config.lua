@@ -14,8 +14,8 @@ return {
 
             mason_tool_installer.setup({
                 ensure_installed = {
-                    "stylua",
                     "clang-format",
+                    "stylua",
                     "yapf",
                     "yamlfix"
 
@@ -34,8 +34,8 @@ return {
 
             mason_lspconfig.setup({
                 ensure_installed = {
-                    "lua_ls",
                     "clangd",
+                    "lua_ls",
                     "pyright",
                 },
             })
