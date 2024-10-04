@@ -16,6 +16,12 @@ return {
                 ensure_installed = {
                     "clang-format",
                     "stylua",
+<<<<<<< HEAD
+=======
+                    "yapf",
+                    "yamlfix"
+
+>>>>>>> 57210f3198cdf5dca1fb33ca33c48eaab2e82976
                 }
             })
         end,
