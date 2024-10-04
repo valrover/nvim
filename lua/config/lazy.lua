@@ -25,6 +25,12 @@ vim.cmd("set tabstop=4")
 vim.cmd("set softtabstop=4")
 vim.cmd("set shiftwidth=4")
 vim.cmd("set number")
+vim.cmd [[
+:augroup numbertoggle
+:	autocmd!
+:	autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
+:	autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
+:augroup END")]]
 vim.cmd("set guicursor=")
 
 
