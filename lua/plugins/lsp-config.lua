@@ -33,7 +33,6 @@ return {
                 ensure_installed = {
                     "clangd",
                     "lua_ls",
-                    "pyright",
                 },
             })
         end
@@ -55,11 +54,9 @@ return {
             local lspconfig = require("lspconfig")
             lspconfig.clangd.setup({
                 capabilities = capabilities,
+                cmd = { "clangd", "--completion-style=bundled", "--header-insertion=never" }, -- Disable auto-includes
             })
             lspconfig.lua_ls.setup({
-                capabilities = capabilities,
-            })
-            lspconfig.pyright.setup({
                 capabilities = capabilities,
             })
 
