@@ -30,8 +30,8 @@ return {
             local mason_lspconfig = require("mason-lspconfig")
 
             mason_lspconfig.setup({
-                ensure_installed = {"clangd", "lua_ls", },
-                automatic_enable = {"clangd", "lua_ls", },
+                ensure_installed = {"clangd", "lua_ls", "pyright",},
+                automatic_enable = {"clangd", "lua_ls", "pyright",},
             })
         end
     },
