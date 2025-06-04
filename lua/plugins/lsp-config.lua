@@ -30,10 +30,8 @@ return {
             local mason_lspconfig = require("mason-lspconfig")
 
             mason_lspconfig.setup({
-                ensure_installed = {
-                    "clangd",
-                    "lua_ls",
-                },
+                ensure_installed = {"clangd", "lua_ls", },
+                automatic_enable = {"clangd", "lua_ls", },
             })
         end
     },
@@ -62,8 +60,13 @@ return {
 
             vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
             vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
+            vim.keymap.set("n", "<leader>gi", vim.lsp.buf.implementation, {})
             vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
             vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
+            vim.diagnostic.config({virtual_text = false})
+            vim.o.updatetime = 250
+            vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
+
         end,
     },
 }
