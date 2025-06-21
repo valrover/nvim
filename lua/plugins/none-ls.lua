@@ -8,6 +8,6 @@ return {
             },
         })
 
-        vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, {})
+        vim.keymap.set("n", "<leader>fc", vim.lsp.buf.format, {})
     end,
 }
