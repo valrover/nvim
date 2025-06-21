@@ -33,9 +33,11 @@ return {
                     "lua_ls",
                     "pylsp" },
 
-                automatic_enable = { "clangd",
-                    "lua_ls",
-                    "pylsp" },
+                automatic_enable = {
+                    exclude = {"clangd",
+                        "lua_ls",
+                        "pylsp" },
+                }
             })
         end
     },
