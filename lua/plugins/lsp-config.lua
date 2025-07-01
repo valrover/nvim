@@ -69,12 +69,12 @@ return {
                     pylsp = {
                         plugins = {
                             pycodestyle = {
-                                ignore = { "E501" },
+                                ignore = { "E501" , "W503"},
                             }
                         },
                         signature = {
                             formatter = 'ruff',
-                            ignore = { "E501" }
+                            ignore = { "E501" , "W503"}
                         }
                     }
                 }
