@@ -8,7 +8,7 @@ return {
         config = function()
             require("mason").setup()
             require("mason-tool-installer").setup({
-                ensure_installed = { "clang-format", "stylua", "ruff" }
+                ensure_installed = { "clang-format", "ruff" }
             })
         end,
     },
@@ -51,11 +51,12 @@ return {
                 settings = {
                     pylsp = {
                         plugins = {
-                            pycodestyle = { ignore = { "E501", "W503" } },
+                            pycodestyle = { ignore = { "E501", "W503", "E266" } },
+                            maxLineLength = 100,
                         },
                         signature = {
                             formatter = "ruff",
-                            ignore = { "E501", "W503" },
+                            ignore = { "E501", "W503", "E266" },
                         },
                     },
                 },
