@@ -8,7 +8,7 @@ return {
         config = function()
             require("mason").setup()
             require("mason-tool-installer").setup({
-                ensure_installed = { "clang-format", "ruff" }
+                ensure_installed = { "ruff" }
             })
         end,
     },
@@ -19,8 +19,8 @@ return {
         },
         config = function()
             require("mason-lspconfig").setup({
-                ensure_installed = { "clangd", "lua_ls", "pylsp" },
-                automatic_enable = { exclude = { "clangd", "lua_ls", "pylsp" } },
+                ensure_installed = { "clangd", "lua_ls", },
+                automatic_enable = { exclude = { "clangd", "lua_ls", } },
             })
         end
     },
@@ -44,24 +44,6 @@ return {
 
             vim.lsp.enable("lua_ls", {
                 capabilities = capabilities,
-            })
-
-            vim.lsp.enable("pylsp", {
-                capabilities = capabilities,
-                settings = {
-                    pylsp = {
-                        plugins = {
-                            pycodestyle = {
-                                ignore = { "E501", "W503", "E266" },
-                                maxLineLength = 100,
-                            },
-                        },
-                        signature = {
-                            formatter = "ruff",
-                            ignore = { "E501", "W503", "E266" },
-                        },
-                    },
-                },
             })
 
             -- Key mappings and diagnostic configurations
