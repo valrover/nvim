@@ -51,8 +51,10 @@ return {
                 settings = {
                     pylsp = {
                         plugins = {
-                            pycodestyle = { ignore = { "E501", "W503", "E266" } },
-                            maxLineLength = 100,
+                            pycodestyle = {
+                                ignore = { "E501", "W503", "E266" },
+                                maxLineLength = 100,
+                            },
                         },
                         signature = {
                             formatter = "ruff",
